@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html lang='pt-BR'>
     <head>
-    	<title>Sérgio</title>
+    	<title>BarCode</title>
     	<meta charset='UTF-8' />
     	<meta name="robots" content="noindex" />
-    	<link rel='stylesheet' href='./gui/style.css' />
-    	<link rel='icon' href='./gui/favicon.ico' type='image/x-icon' />
     	<meta name="viewport" content="width=device-width,user-scalable=no" />
-        <script type="text/javascript" src="./cordova.js"></script>
-    	<script type='text/javascript' src='./jquery.js'></script>
-    	<script type='text/javascript' src='./gui.js'></script>
-    	<script type='text/javascript' src='./api.js'></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+            function barcode(){
+                alert("ok");
+                    cordova.plugins.barcodeScanner.scan(
+                      function (result) {
+                          alert("We got a barcode\n" +
+                                "Result: " + result.text + "\n" +
+                                "Format: " + result.format + "\n" +
+                                "Cancelled: " + result.cancelled);
+                      },
+                      function (error) {
+                          alert("Scanning failed: " + error);
+                      },
+                      {
+                          preferFrontCamera : true, // iOS and Android
+                          showFlipCameraButton : true, // iOS and Android
+                          showTorchButton : true, // iOS and Android
+                          torchOn: true, // Android, launch with the torch switched on (if available)
+                          saveHistory: true, // Android, save scan history (default false)
+                          prompt : "Place a barcode inside the scan area", // Android
+                          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+                          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+                          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+                          disableAnimations : true, // iOS
+                          disableSuccessBeep: false // iOS and Android
+                      }
+                    );
+            }
+        </script>
     </head>
-    <body class='loading'>
-    	<div id='loading'>
-    		<div class='escuro'></div>
-    		<div class='imagem'></div>
-    	</div>
-    	<div id='superior'>
-    		<div id='logomarca'>
-    			<a href='#/'><img src='./gui/logomarca.png' /></a>
-    		</div>
-    		<div id='hyperlink'>
-                <div id='hyperlink-sim'>
-        			<img src='./gui/hyperlink-sim.png' />
-        			<span>Menu</span>
-                </div>
-                <div id='hyperlink-nao'>
-        			<img src='./gui/hyperlink-nao.png' />
-        			<span>Fechar</span>
-                </div>
-    		</div>
-    	</div>
-        <div id='interior'>
-        	<div id='navegacao'>
-        		<span>
-        			<a href='#/seguranca/'>Acesso</a>
-        			<a href='#/evento/'>Evento</a>
-        		</span>
-        	</div>
-        	<div id='rolagem'>
-                <div id='conteudo'>
-                </div>
-            </div>
-        </div>
+    <body>
+        <button onclick="barcode()">BARCODE SCAN</button>
     </body>
 </html>
