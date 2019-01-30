@@ -1,12 +1,51 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="br.com.azamba.barcode" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
-        <preference name="phonegap-version" value="cli-8.0.0" />
-        <preference name="android-targetSdkVersion" value="26"/>
-        <preference name="AndroidLaunchMode" value="singleInstance" />
-        <preference name="Fullscreen" value="true" />
-        <name>BarCode</name>
-        <content src="index.html" />
-        <icon src="gui/appicon.png" />
-        <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
-        <access origin="*" />
+<widget id="com.devexpress.apptemplate" version="1.0" versionCode="1">
+  <name>ApplicationTemplate</name>
+  <description>Template</description>
+  <author email="info@info.com" href="http://www.info.com/">info</author>
+  <preference name="permissions" value="none" />
+  <preference name="prerendered-icon" value="true" />
+  <preference name="phonegap-version" value="cli-7.0.1" />
+  <preference name="android-windowSoftInputMode" value="adjustPan" />
+  <preference name="SplashScreenDelay" value="3000" />
+  <preference name="AutoHideSplashScreen" value="false" />
+  <preference name="SplashShowOnlyFirstTime" value="false" />
+  <preference name="FadeSplashScreen" value="false" />
+  <preference name="ShowSplashScreenSpinner" value="false" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="StatusBarOverlaysWebView" value="false" />
+  <preference name="StatusBarStyle" value="default" />
+
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true" />
+  </feature>
+  <preference name="StatusBarBackgroundColor" value="#000000" />
+  <preference name="android-minSdkVersion" value="15" />
+  <preference name="android-targetSdkVersion" value="26" />
+  <platform name="android">
+    <resource-file src="google-services.json" target="google-services.json" />
+  </platform>
+  <platform name="ios">
+    <resource-file src="GoogleService-Info.plist" />
+  </platform>
+  <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
+  <plugin name="cordova-plugin-inappbrowser" />
+  <plugin name="cordova-plugin-splashscreen" onload="true" />
+  <plugin name="cordova-plugin-whitelist" />
+  <plugin name="cordova-plugin-ios-longpress-fix" />
+  <!--<plugin name="cordova-plugin-statusbar" onload="true" />-->
+  <plugin name="phonegap-plugin-push" spec="2.0.0" />
+  <plugin spec="https://github.com/Telerik-Verified-Plugins/BarcodeScanner.git" source="git">
+    <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
+  </plugin>
+  <plugin name="cordova-plugin-camera" spec="^2.4.1" source="npm">
+    <variable name="CAMERA_USAGE_DESCRIPTION" value="This app requires access to take picture and send them, if needed." />
+    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app requires access to the photo library to send them, if needed." />
+  </plugin>
+  <plugin name="cordova-android-support-gradle-release">
+    <variable name="ANDROID_SUPPORT_VERSION" value="26.0.0"/>
+  </plugin>
+  <access origin="*" />
+  <!--<engines>
+    <engine name="android" spec="^6.3.0" />
+  </engines>-->
 </widget>
