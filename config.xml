@@ -1,8 +1,6 @@
-<widget id="com.devexpress.apptemplate" version="1.0" versionCode="1">
+<widget id="br.com.azamba.barcode" version="1.0" versionCode="1">
   <platform name="android" />
-  <name>ApplicationTemplate</name>
-  <description>Template</description>
-  <author email="info@info.com" href="http://www.info.com/">info</author>
+  <name>BarCode</name>
   <preference name="permissions" value="none" />
   <preference name="prerendered-icon" value="true" />
   <preference name="phonegap-version" value="cli-7.0.1" />
@@ -21,7 +19,7 @@
   <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
   <plugin name="cordova-plugin-whitelist" />
   <plugin spec="https://github.com/Telerik-Verified-Plugins/BarcodeScanner.git" source="git">
-    <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
+    <param name="CAMERA_USAGE_DESCRIPTION" value="" />
   </plugin>
   <plugin name="cordova-plugin-camera" spec="^2.4.1" source="npm">
     <variable name="CAMERA_USAGE_DESCRIPTION" value="This app requires access to take picture and send them, if needed." />
