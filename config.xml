@@ -8,8 +8,7 @@
   <preference name="StatusBarStyle" value="default" />
   <preference name="StatusBarBackgroundColor" value="#FFCC00" />
   <preference name="android-minSdkVersion" value="15" />
-  <preference name="android-targetSdkVersion" value="26" />
-  <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
+  <preference name="android-targetSdkVersion" value="26" /
   <plugin name="cordova-plugin-whitelist" />
   <plugin spec="https://github.com/Telerik-Verified-Plugins/BarcodeScanner.git" source="git">
     <param name="CAMERA_USAGE_DESCRIPTION" value="" />
