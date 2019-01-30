@@ -1,5 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "br.com.azamba.sergio",
-               "sha256_cert_fingerprints": ["40:B1:FB:99:CB:CA:08:5D:6A:67:F6:1D:C1:C2:4B:24:5C:ED:BB:06:E9:76:20:2B:59:74:D1:FE:5B:5F:F5:22"] }
-}]
