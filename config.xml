@@ -1,4 +1,5 @@
 <widget id="com.devexpress.apptemplate" version="1.0" versionCode="1">
+  <platform name="android" />
   <name>ApplicationTemplate</name>
   <description>Template</description>
   <author email="info@info.com" href="http://www.info.com/">info</author>
@@ -14,20 +15,11 @@
   <preference name="DisallowOverscroll" value="true" />
   <preference name="StatusBarOverlaysWebView" value="false" />
   <preference name="StatusBarStyle" value="default" />
-
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true" />
-  </feature>
   <preference name="StatusBarBackgroundColor" value="#000000" />
   <preference name="android-minSdkVersion" value="15" />
   <preference name="android-targetSdkVersion" value="26" />
-  <platform name="android" />
   <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
-  <plugin name="cordova-plugin-inappbrowser" />
-  <plugin name="cordova-plugin-splashscreen" onload="true" />
   <plugin name="cordova-plugin-whitelist" />
-  <plugin name="cordova-plugin-ios-longpress-fix" />
-  <!--<plugin name="cordova-plugin-statusbar" onload="true" />-->
   <plugin name="phonegap-plugin-push" spec="2.0.0" />
   <plugin spec="https://github.com/Telerik-Verified-Plugins/BarcodeScanner.git" source="git">
     <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
