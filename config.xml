@@ -20,7 +20,6 @@
   <preference name="android-targetSdkVersion" value="26" />
   <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
   <plugin name="cordova-plugin-whitelist" />
-  <plugin name="phonegap-plugin-push" spec="2.0.0" />
   <plugin spec="https://github.com/Telerik-Verified-Plugins/BarcodeScanner.git" source="git">
     <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
   </plugin>
