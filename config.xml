@@ -1,20 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="br.com.azamba.sergio" version="9.0.0" xmlns="http://www.w3.org/ns/widgets">
+<widget id="br.com.azamba.barcode" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
         <preference name="phonegap-version" value="cli-8.0.0" />
         <preference name="android-targetSdkVersion" value="26"/>
         <preference name="AndroidLaunchMode" value="singleInstance" />
         <preference name="Fullscreen" value="true" />
-        <name>Sérgio</name>
+        <name>BarCode</name>
         <content src="index.html" />
         <icon src="gui/appicon.png" />
         <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
         <access origin="*" />
-        <plugin name="cordova-plugin-deeplinks" spec="1.1.0" />
-        <universal-links>
-                <host name="sergio.azamba.com.br" scheme="http" />
-                <host name="sergio.azamba.com.br" scheme="https" />
-                <!--
-                <ios-team-id value="<TEAM_ID_FROM_MEMBER_CENTER>" />
-                -->
-        </universal-links>
 </widget>
