@@ -21,9 +21,6 @@
   <preference name="StatusBarBackgroundColor" value="#000000" />
   <preference name="android-minSdkVersion" value="15" />
   <preference name="android-targetSdkVersion" value="26" />
-  <platform name="android">
-    <resource-file src="google-services.json" target="google-services.json" />
-  </platform>
   <platform name="ios">
     <resource-file src="GoogleService-Info.plist" />
   </platform>
