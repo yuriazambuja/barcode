@@ -34,6 +34,38 @@
                     );
             }
         </script>
+        <script>
+var xml = '<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/"><Body><consultaCEP xmlns="http://cliente.bean.master.sigep.bsb.correios.com.br/"><cep xmlns="">28623190</cep></consultaCEP></Body></Envelope>';
+function request(get,post,action){
+	alert(post);
+	var connection;
+	if(window.XDomainRequest){
+		connection = new window.XDomainRequest();
+	}else if(window.ActiveXObject){
+		try{
+			connection = new ActiveXObject("Msxml2.XMLHTTP");
+		}catch(e){
+			connection = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}else{
+		connection = new XMLHttpRequest();
+	}
+	connection.onreadystatechange=function(){
+		if(connection.readyState==4){
+			alert(connection.status);
+			alert(connection.responseText);
+		}
+	};
+	connection.open(post?"POST":"GET",get);
+	if(post){
+		connection.setRequestHeader("content-type","text/xml");
+		connection.setRequestHeader("SOAPAction","\""+action+"\"");
+	}
+	connection.send(post?post:null);
+	return true;
+}
+request("https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente",xml,"");
+</script>
     </head>
     <body>
         <button onclick="barcode()">BARCODE SCAN</button>
