@@ -11,14 +11,21 @@
 		<style>
 		* {
 			box-sizing:border-box;
+			font-family: verdana;
 		}
 		html, body {
 			height:100%;
 			margin:0;
 			font-size:10px;
+			padding:0 10px;
 		}
 		input, button {
 			width:100%;
+			padding:10px;
+			margin:10px 0;
+		}
+		label {
+			font-weight:bold;
 		}
 		</style>
 		<script>
@@ -49,30 +56,35 @@
 		}
 		function correios(){
 			var wsdl = "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl";
-			new WebService(wsdl).call("consultaCEP",{cep:$('cep').val()},function(status,object){
+			new WebService(wsdl).call("consultaCEP",{cep:$('#cep').val()},function(status,object){
 				if(status==200){
-					$('logradouro').val(object.end);
-					$('bairro').val(object.bairro);
-					$('cidade').val(object.cidade);
-					$('estado').val(object.uf);
+					$('#logradouro').val(object.return.end);
+					$('#bairro').val(object.return.bairro);
+					$('#cidade').val(object.return.cidade);
+					$('#estado').val(object.return.uf);
 				}else{
 					alert("WebService failed: " + status);
 				}
 			});
 		}
 		$(document).ready(function(){
-			$('barcode').click(barcode);
-			$('correios').click(correios);
+			$('#barcode').click(barcode);
+			$('#correios').click(correios);
 		});
 		</script>
 	</head>
 	<body>
+		<label>CEP</label>
+		<input type='text' value='22010000' id='cep'/>
 		<button id='barcode'>CÓDIGO DE BARRAS</button>
-		<input type='text' id='cep'/>
+		<label>LOGRADOURO</label>
+		<input type='text' id='logradouro' disabled/>
+		<label>BAIRRO</label>
+		<input type='text' id='bairro' disabled/>
+		<label>CIDADE</label>
+		<input type='text' id='cidade' disabled/>
+		<label>ESTADO</label>
+		<input type='text' id='estado' disabled/>
 		<button id='correios'>CONSULTA CORREIOS</button>
-		<input type='text' id='logradouro'/>
-		<input type='text' id='bairro'/>
-		<input type='text' id='cidade'/>
-		<input type='text' id='estado'/>
 	</body>
 </html>
