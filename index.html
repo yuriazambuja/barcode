@@ -17,8 +17,12 @@
 		html, body {
 			height:100%;
 			margin:0;
-			font-size:10px;
+			font-size:12px;
 			padding:0 10px;
+			background:#eee;
+		}
+		html {
+			overflow-y:hidden;
 		}
 		input, button {
 			width:100%;
@@ -26,7 +30,38 @@
 			margin:10px 0;
 		}
 		label {
+			display:block;
+			margin-top:25px;
 			font-weight:bold;
+		}
+		input {
+		    border-radius:4px;
+		    box-shadow: 1px 1px 2px #333333;
+		    background: #fff;
+    		border:1px solid #000000;
+		}
+		input[disabled] {
+		    background: #eee;
+		    border-color: #ccc;
+		    box-shadow: none;
+		    color:black;
+		}
+		button {
+			font-weight:bold;
+		    border-radius:4px;
+		    box-shadow: 1px 1px 2px #333333;
+		    background: gold;
+    		border:1px solid #000000;
+		}
+		#codigo {
+		    border-radius:4px 0 0 4px;
+			width:60%;
+			border-right:none;
+		}
+		#barcode{
+		    border-radius:0 4px 4px 0;
+			border-left:none;
+			width:40%;
 		}
 		</style>
 		<script>
@@ -81,8 +116,9 @@
 	</head>
 	<body>
 		<label>CEP</label>
-		<input type='text' id='codigo'/>
-		<button id='barcode'>CÓDIGO DE BARRAS</button>
+		<div>
+			<input type='number' id='codigo'/><button id='barcode'>CÓDIGO DE BARRAS</button>
+		</div>
 		<label>LOGRADOURO</label>
 		<input type='text' id='logradouro' disabled/>
 		<label>BAIRRO</label>
@@ -91,6 +127,6 @@
 		<input type='text' id='cidade' disabled/>
 		<label>ESTADO</label>
 		<input type='text' id='estado' disabled/>
-		<button id='correios'>CONSULTA CORREIOS</button>
+		<button id='correios'>CONSULTAR CEP NOS CORREIOS</button>
 	</body>
 </html>
