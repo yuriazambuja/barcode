@@ -12,6 +12,7 @@
 		* {
 			box-sizing:border-box;
 			font-family: verdana;
+			user-select: none;
 		}
 		html, body {
 			height:100%;
@@ -30,10 +31,11 @@
 		</style>
 		<script>
 		function barcode(){
+			$('#codigo').val('');
 			cordova.plugins.barcodeScanner.scan(
 				function (result) {
 					if(!result.cancelled){
-						$('cep').val(result.text);
+						$('#codigo').val(result.text);
 					}
 				},
 				function (error) {
@@ -55,8 +57,12 @@
 			);
 		}
 		function correios(){
+			$('#logradouro').val('');
+			$('#bairro').val('');
+			$('#cidade').val('');
+			$('#estado').val('');
 			var wsdl = "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl";
-			new WebService(wsdl).call("consultaCEP",{cep:$('#cep').val()},function(status,object){
+			new WebService(wsdl).call("consultaCEP",{cep:$('#codigo').val()},function(status,object){
 				if(status==200){
 					$('#logradouro').val(object.return.end);
 					$('#bairro').val(object.return.bairro);
@@ -75,7 +81,7 @@
 	</head>
 	<body>
 		<label>CEP</label>
-		<input type='text' value='22010000' id='cep'/>
+		<input type='text' id='codigo'/>
 		<button id='barcode'>CÓDIGO DE BARRAS</button>
 		<label>LOGRADOURO</label>
 		<input type='text' id='logradouro' disabled/>
