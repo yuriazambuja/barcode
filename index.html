@@ -50,8 +50,9 @@
 			font-weight:bold;
 		    border-radius:4px;
 		    box-shadow: 1px 1px 2px #333333;
-		    background: gold;
+		    background: navy;
     		border:1px solid #000000;
+		    color:white;
 		}
 		#codigo {
 		    border-radius:4px 0 0 4px;
@@ -59,6 +60,8 @@
 			border-right:none;
 		}
 		#barcode{
+		    background: gold;
+		    color:black;
 		    border-radius:0 4px 4px 0;
 			border-left:none;
 			width:40%;
@@ -66,7 +69,6 @@
 		</style>
 		<script>
 		function barcode(){
-			$('#codigo').val('');
 			cordova.plugins.barcodeScanner.scan(
 				function (result) {
 					if(!result.cancelled){
