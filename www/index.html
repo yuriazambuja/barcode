@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,user-scalable=no" />
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="webservice.js"></script>
+		<script type="text/javascript" src="cep2ibge.js"></script>
 		<script type="text/javascript" src="jquery.js"></script>
 		<style>
 		* {
@@ -100,6 +101,7 @@
 			$('#bairro').val('');
 			$('#cidade').val('');
 			$('#estado').val('');
+			$('#ibge').val('');
 			var wsdl = "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl";
 			new WebService(wsdl).call("consultaCEP",{cep:$('#codigo').val()},function(status,object){
 				if(status==200){
@@ -107,6 +109,7 @@
 					$('#bairro').val(object.return.bairro);
 					$('#cidade').val(object.return.cidade);
 					$('#estado').val(object.return.uf);
+					$('#ibge').val(cep2ibge(object.return.cep));
 				}else{
 					alert("WebService failed: " + status);
 				}
@@ -134,6 +137,8 @@
 		<input type='text' id='cidade' disabled/>
 		<label>ESTADO</label>
 		<input type='text' id='estado' disabled/>
+		<label>IBGE</label>
+		<input type='text' id='ibge' disabled/>
 		<button id='correios'>CONSULTAR CEP NOS CORREIOS</button>
 	</body>
 </html>
