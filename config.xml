@@ -2,8 +2,6 @@
   <platform name="android" />
   <name>CEP em Barras</name>
   <icon src="www/favicon.png" />
-  <description>Template</description>
-  <author email="info@info.com" href="http://www.info.com/">info</author>
   <preference name="permissions" value="none" />
   <preference name="prerendered-icon" value="true" />
   <preference name="phonegap-version" value="cli-7.0.1" />
@@ -16,7 +14,7 @@
   <preference name="DisallowOverscroll" value="true" />
   <preference name="StatusBarOverlaysWebView" value="false" />
   <preference name="StatusBarStyle" value="default" />
-  <preference name="StatusBarBackgroundColor" value="#000000" />
+  <preference name="StatusBarBackgroundColor" value="#FFD700" />
   <preference name="android-minSdkVersion" value="15" />
   <preference name="android-targetSdkVersion" value="26" />
   <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
