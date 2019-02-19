@@ -1,7 +1,7 @@
 <widget id="br.com.azamba.barcode" version="1.0" versionCode="1">
   <platform name="android" />
   <name>CEP em Barras</name>
-  <icon src="www/favicon.png" />
+  <icon src="favicon.png" />
   <preference name="permissions" value="none" />
   <preference name="prerendered-icon" value="true" />
   <preference name="phonegap-version" value="cli-7.0.1" />
