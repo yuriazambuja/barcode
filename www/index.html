@@ -75,6 +75,7 @@
 				function (result) {
 					if(!result.cancelled){
 						$('#codigo').val(result.text);
+						correios();
 					}
 				},
 				function (error) {
