@@ -68,6 +68,22 @@
 			border-left:none;
 			width:200px;
 		}
+		#loading {
+			background-image:url(loading.gif);
+			background-color:black;
+			background-repeat:no-repeat;
+			background-position:center;
+			position:fixed;
+			width:100%;
+			height:100%;
+			left:0;
+			top:0;
+			opacity:0.8;
+			display:none;
+		}
+		.loading #loading {
+			display:block;
+		}
 		</style>
 		<script>
 		function barcode(){
@@ -98,6 +114,7 @@
 			);
 		}
 		function correios(){
+			$('body').addClass('loading');
 			$('#logradouro').val('');
 			$('#bairro').val('');
 			$('#cidade').val('');
@@ -114,6 +131,7 @@
 				}else{
 					alert("WebService failed: " + status);
 				}
+				$('body').removeClass('loading');
 			});
 		}
 		$(document).ready(function(){
@@ -123,7 +141,8 @@
 		</script>
 	</head>
 	<body>
-		<center><img src="favicon.png"></center>
+		<div id="loading"></div>
+		<center><img src="favicon.png" /></center>
 		<label>CEP</label>
 		<div>
 			<input type='number' id='codigo'/><button id='barcode'>
