@@ -56,7 +56,8 @@ function WebService(wsdl){
 		if(post){
 			connection.setRequestHeader("content-type","text/xml");
 			//connection.setRequestHeader("SOAPAction","\""+action+"\"");
-		}
+		}
+
 		connection.send(post?post:null);
 		return true;
 	};
@@ -101,7 +102,7 @@ function WebService(wsdl){
 					}
 				}
 			}else{
-				alert('N√O: '+result.status);
+				alert('N√ÉO: '+result.status);
 			}
 			result.master.play();
 		});
@@ -119,7 +120,7 @@ function WebService(wsdl){
 						if(result.status==200){
 							result.master.schemas(result.responseXML);
 						}else{
-							alert('N√O: '+result.status);
+							alert('N√ÉO: '+result.status);
 						}
 						result.master.play();
 					});
