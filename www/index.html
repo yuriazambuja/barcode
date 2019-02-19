@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang='pt-BR'>
 	<head>
-		<title>CEP em Barras</title>
 		<meta charset='UTF-8' />
 		<meta name="robots" content="noindex" />
 		<meta name="viewport" content="width=device-width,user-scalable=no" />
@@ -30,14 +29,14 @@
 		}
 		label {
 			display:block;
-			margin-top:25px;
+			margin-top:15px;
 			font-weight:bold;
 		}
 		input {
 			border-radius:4px;
 			box-shadow: 1px 1px 2px #333333;
 			background: #fff;
-    			border:1px solid #000000;
+			border:1px solid #000000;
 		}
 		input[disabled] {
 			background: #eee;
@@ -50,7 +49,7 @@
 			border-radius:4px;
 			box-shadow: 1px 1px 2px #333333;
 			background: navy;
-    			border:1px solid #000000;
+    		border:1px solid #000000;
 			color:white;
 		}
 		button:active {
@@ -89,7 +88,7 @@
 					showTorchButton : false, // iOS and Android
 					torchOn: false, // Android, launch with the torch switched on (if available)
 					prompt : " ",
-					//prompt : "POSICIONE O CÓDIGO DE BARRAS NA ÁREA INDICADA", // Android
+					//prompt : "POSICIONE O CÃ“DIGO DE BARRAS NA ÃREA INDICADA", // Android
 					resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
 					disableAnimations : true, // iOS
 					disableSuccessBeep: false // iOS and Android
@@ -120,6 +119,7 @@
 		</script>
 	</head>
 	<body>
+		<center><img src="favicon.png"></center>
 		<label>CEP</label>
 		<div>
 			<input type='number' id='codigo' min="0" max="99999999"/><button id='barcode'>
