@@ -1,6 +1,6 @@
 <widget id="br.com.azamba.barcode" version="1.0" versionCode="1">
   <platform name="android" />
-  <name>BarCode</name>
+  <name>CEP em Barras</name>
   <icon src="favicon.png" />
   <description>Template</description>
   <author email="info@info.com" href="http://www.info.com/">info</author>
