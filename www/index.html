@@ -89,6 +89,7 @@
 					//orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
 					showTorchButton : false, // iOS and Android
 					torchOn: false, // Android, launch with the torch switched on (if available)
+					prompt : " ",
 					//prompt : "POSICIONE O CÓDIGO DE BARRAS NA ÁREA INDICADA", // Android
 					resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
 					disableAnimations : true, // iOS
@@ -122,7 +123,9 @@
 	<body>
 		<label>CEP</label>
 		<div>
-			<input type='number' id='codigo'/><button id='barcode'>C&Oacute;DIGO DE BARRAS</button>
+			<input type='number' id='codigo' min="0" max="99999999"/><button id='barcode'>
+				C&Oacute;DIGO DE BARRAS
+			</button>
 		</div>
 		<label>LOGRADOURO</label>
 		<input type='text' id='logradouro' disabled/>
