@@ -1,5 +1,7 @@
 <widget id="br.com.azamba.barcode" version="1.0" versionCode="1">
   <platform name="android" />
+  <platform name="windows" />
+  <preference name="windows-target-version" value="10.0" />
   <name>CEP em Barras</name>
   <icon src="www/favicon.png" />
   <preference name="permissions" value="none" />
